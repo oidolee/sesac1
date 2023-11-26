@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>서울 폭염 지역 분석</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <style>
+        nav {
+            background-color: dimgrey !important;
+        }
+        nav.scrolled {
+            background-color: white !important;
+        }
+
+    </style>
+    
+    <script>
+        window.addEventListener('scroll', function () {
+            var body = document.body;
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    
+            let navBar = document.querySelector("#mainNav")
+    
+            // Check if scroll position is at the top
+            if (scrollPosition === 0) {
+                // Set background color to white
+                navBar.classList.remove('scrolled'); // Remove the 'scrolled' class
+            } else {
+                // Set background color to dimgrey
+                navBar.classList.add('scrolled'); // Add the 'scrolled' class
+            }
+        });
+    </script>
+    
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+
+    <section class="page-section" id="part_6">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">폭염주의 지역 데이터</h2>
+            <hr class="divider" />
+            <div class="row gx-4 gx-lg-5">
+                <div class="mt-5">
+                    <iframe style="width: 100%; height: 500px;" src="../data/result/mapFinalPercentDong.html"
+                        frameborder="0"></iframe>
+                </div>
+                <p class="text-center fs-5 mt-5">&#8251 서울시 동별 폭염주의 지역 Top3</p>
+                <p class="text-center fs-6 mt-5">(취약계층 인구수 * 기온) / (취약계층 인구수 * 기온) 의 최대치 의 값</p>
+
+                <div class="tableBox">
+                    <table class="table text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th class="tg-056s">순위</th>
+                                <th class="tg-8elp">지역</th>
+                                <th class="tg-8elp">총 인구수</th>
+                                <th class="tg-8elp">평균 기온</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-hpaw">1</td>
+                                <td class="tg-hpaw">은평구 진관동</td>
+                                <td class="tg-hpaw">57,964</td>
+                                <td class="tg-hpaw">24.35</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="tg-hpaw">2</td>
+                                <td class="tg-hpaw">양천구 신정3동</td>
+                                <td class="tg-hpaw">54,727</td>
+                                <td class="tg-hpaw">25.50</td>
+                            </tr>
+                            <tr>
+                            <tr>
+                                <td class="tg-hpaw">3</td>
+                                <td class="tg-hpaw">강서구 화곡1동</td>
+                                <td class="tg-hpaw">56,705</td>
+                                <td class="tg-hpaw">24.27</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="mt-5">
+                    <iframe style="width: 100%; height: 500px;" src="../data/result/mapFinalPercentGu.html"
+                        frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SimpleLightbox plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>

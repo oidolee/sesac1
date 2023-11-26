@@ -19,9 +19,34 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        /* 1300px 이하의 화면 크기에서만 적용되는 스타일 */
+        @media (max-width: 1400px) {
+            .imageBox {
+                display: block !important; /* d-flex 클래스 제거 */
+                justify-content: initial !important; /* d-flex에서 사용되는 스타일 초기값으로 설정 */
+                text-align: center;
+            }
+        }
+    </style>
+    
+    <script>
+        function openList(number){
+            let pageName = './page/analyzeList_'+number+'.html'
+            window.open(pageName, "_blank", "width=1300, height=800");
+        }
+        window.onload =function(){
+            var loadBox = document.getElementById("loadBox");
+            if (loadBox) {
+                loadBox.remove()
+            }
+        }
+    </script>
 </head>
 
 <body id="page-top">
+        
+  
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
@@ -45,11 +70,16 @@
                             <li><a class="dropdown-item" href="#part_3">저소득층 인구 데이터</a></li>
                             <li><a class="dropdown-item" href="#part_4">청소년 인구 데이터</a></li>
                             <li><a class="dropdown-item" href="#part_5">독거 노인 인구 데이터</a></li>
+                            <li><a class="dropdown-item" href="#predictBox">2024 폭염 일자 예측</a></li>
                         </ul>
                     </li>
 
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">결론</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#resultBox">결론</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">연락처</a></li>
+                    <li id="loadBox" class="nav-item d-flex">
+                        <div class="spinner-border" style="width: 2rem; height: 2rem;" role="status"></div>
+                        <p style="font-size: 10px; margin: 10px 5px;">데이터를 불러오고 있습니다.</p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -78,17 +108,8 @@
                             style="font-size: 35px; color: black; font-weight: bold;">폭염 질환 환자가 증가</span></h3>
                     <h4 class="text-white" style="margin: 50px 0 50px 0;">폭염 취약 <span
                             style="font-size: 30px; color: black; font-weight: bold;">계층 분석</span>을 통해 재해 예방</h4>
-                    <div style="display: flex;">
-                        <div style="width: 500px;">
-                            <img style="width: 100%;" src="./assets/img/portfolio/hot_1.png" alt="">
-                        </div>
-                        <div style="width: 561px;">
-                            <img style="width: 100%;" src="./assets/img/portfolio/hot_2.png" alt="">
-                        </div>
-                    </div>
-
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">폭염 대비 서울시는 폭염대응체계 강화</p>
+                    <p class="text-white-75 mb-4">데이터 및 머신러닝 분석</p>
                     <a class="btn btn-light btn-xl" href="#part_1">분석 보기</a>
                 </div>
             </div>
@@ -199,7 +220,6 @@
 
             </div>
         </div>
-        <!-- <div class="container px-4 px-lg-5" style="height: 1000px;">            </div> -->
     </section>
 
     <section class="page-section" id="part_2">
@@ -480,7 +500,6 @@
                     </table>
                 </div>
 
-
                 <div class="mt-5">
                     <iframe style="width: 100%; height: 500px;" src="./data/result/mapFinalPercentGu.html"
                         frameborder="0"></iframe>
@@ -522,16 +541,23 @@
         </div>
     </section>
 
-
-
-    <!-- Portfolio-->
-    <div id="portfolio">
-        <div class="container-fluid p-0">
-
+    <section class="page-section" id="predictBox">
+        <div class="container px-4 px-lg-5">
+            <h2 class="text-center mt-0">2024 폭염 시작일자 예측</h2>
+            <hr class="divider" />
+            <p class="text-center fs-5 mt-5">&#8251 선형회귀 모델로 7월, 8월 폭염 시작 일자 예측</p>
+            <div class="row gx-4 gx-lg-5">
+                <div class="imageBox mt-5 d-flex justify-content-center">
+                    <img src="./assets/img/portfolio/predict_summer_1.png" class="predict_image img-fluid" alt="predict_summer_1">
+                    <img src="./assets/img/portfolio/predict_summer_2.png" class="predict_image img-fluid" alt="predict_summer_2">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+  
     <!-- Call to action-->
-    <section class="page-section bg-dark text-white">
+    <section class="page-section bg-dark text-white" id="resultBox">
         <h2 class="text-center">- 결론 -</h2>
         <div class="container px-4 px-lg-5 text-center d-flex">
             <div class="mt-5" style="width: 600px;">
@@ -551,12 +577,11 @@
                     frameborder="0"></iframe>
             </div>
         </div>
-
-
-
-
-
     </section>
+
+
+
+
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="container px-4 px-lg-5">
